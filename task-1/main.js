@@ -22,6 +22,15 @@ console.log(makeLegend("leanne"));
 let legendaryCelebs = celebs.map(makeLegend);
 console.log(legendaryCelebs);
 
+function startsWithVowel(celebName){
+ 
+  let regEx = /^[aeiou]/i   // checks for words starting with vowel and ignores case.
+  return celebName.match(regEx)
+
+}
+let vowelCelebs = celebs.filter(startsWithVowel)
+
+console.log(vowelCelebs);
 
 // Task 1
 // 👉 Write a function called makeLegend, which takes in a name (string) as its 
