@@ -1,15 +1,15 @@
-// const celebs = [
-//   "David Beckham",
-//   "Cher",
-//   "Madonna",
-//   "Tom Petty",
-//   "Cristiano Ronaldo",
-//   "Whoopi Goldberg",
-//   "Samuel L Jackson",
-//   "Angelina Jolie",
-//   "Richard Osman",
-//   "Emma Thompson"
-// ];
+const celebs = [
+  "David Beckham",
+  "Cher",
+  "Madonna",
+  "Tom Petty",
+  "Cristiano Ronaldo",
+  "Whoopi Goldberg",
+  "Samuel L Jackson",
+  "Angelina Jolie",
+  "Richard Osman",
+  "Emma Thompson"
+ ];
 
 
 function makeLegend (name){
@@ -17,6 +17,11 @@ function makeLegend (name){
 }
 
 console.log(makeLegend("leanne"));
+ 
+
+let legendaryCelebs = celebs.map(makeLegend);
+console.log(legendaryCelebs);
+
 
 // Task 1
 // 👉 Write a function called makeLegend, which takes in a name (string) as its 
