@@ -12,7 +12,9 @@ importantThings =[];
 
 let input = document.querySelector("#important-thing");
 let addToListButton = document.querySelector("#add-to-list");
-let priorityNumber = document.querySelector("#priority")
+let priorityNumber = document.querySelector("#priority");
+let orderedList = document.querySelector("ol");
+let NewOrderedList = document.querySelector("#new-ordered-list");
 
 function addToList (){
 
@@ -21,19 +23,79 @@ function addToList (){
         priority: priorityNumber.value
      });
     
-   
     // console.log("priority No", priorityNumber.value)
-
-    let orderedList = document.querySelector("ol")
+    
     let bullet = document.createElement("li");
     bullet.innerText = `Important Thing: ${input.value},   Priority: ${priorityNumber.value}`
     orderedList.appendChild(bullet); // append element using brackets! 
+
+    console.log("important things unchanged", importantThings);
 
 }
 
 addToListButton.addEventListener("click", addToList);
 
-console.log("my array", importantThings);
+
+
+//sort importantThings
+
+function sortList (){
+    importantThings.sort(function compare (value1, value2){
+        return value1.priority - value2.priority;
+     })
+
+    function print (element){
+        console.log(element.item);
+
+        orderedList.remove();
+
+        let newBullet = document.createElement("li");
+        newBullet.innerText = element.item;
+        console.log("new bullet from forEach", newBullet);
+        NewOrderedList.appendChild(newBullet);
+        
+    }
+
+    importantThings.forEach(print)   
+
+    //now put what is printed to console on website.
+    // create a new bullet point, add element.item to text,  and append to orederList
+
+     // removes bullets
+     // i think a new OL will need to be created as the li's were made in a function before. 
+     // these have to be in the function because a new one is created every time it is clicked.
+
+
+
+    // this leaves the old bullets. 
+    // need to clear old bullet list?
+    // the append new bullets.
+
+
+    
+
+
+
+
+        
+    }
+
+// click button to make above function run
+// create event listener for order-list
+
+let orderList = document.querySelector("#order-list");
+orderList.addEventListener("click", sortList)
+
+
+
+
+// bullet is created in above function as everytime function is created, new li is made.
+// i can declare ol outside of function. 
+// can i delete all bullets made and replace with new bullets from forEach loop?
+
+
+
+
 
 // 👉 As well as adding the item to the in-memory array, now display each added item in an li element within the ordered list.
 
@@ -57,9 +119,15 @@ console.log("my array", importantThings);
 
 // 👉 Add a new button to your site called Order List. When the button is clicked, reorder your list by priority.
 
-1
-2
-3
-4
+// create button in HTML called order list 
+// order object in array in order of priorty.
+    // select priority key in object, and sort these from low (highest priority) to high.
+    // can I use the .sort to put these values in order? sort(importantThings.priority)? 
 
-5
+
+//then match the item of each ordered object and replace the bullets with this information
+
+
+
+// loop through the items in each object (forEach)
+// and replace innerTextof each li bullet point with the text so the list shows in order. 
