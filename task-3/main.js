@@ -13,8 +13,7 @@ async function getCatImage (){
     img.setAttribute("width", "500px");
     img.setAttribute("height", "500px");
     img.src = catImage;
-    let catHere = document.querySelector("#cat-here")
-    catHere.innerText = catImage 
+    img.innerText = catImage 
 
     //IM NOT SURE IF THE ABOVE ANSWER IS QUITE RIGHT FOR PART TWO..?!?!
  
