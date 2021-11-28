@@ -12,21 +12,28 @@ importantThings =[];
 
 let input = document.querySelector("#important-thing");
 let addToListButton = document.querySelector("#add-to-list");
+let priorityNumber = document.querySelector("#priority")
 
 function addToList (){
 
-    importantThings.push(input.value);
+    importantThings.push({
+        item: input.value,
+        priority: priorityNumber.value
+     });
+    
+   
+    // console.log("priority No", priorityNumber.value)
 
     let orderedList = document.querySelector("ol")
     let bullet = document.createElement("li");
-    bullet.innerText = input.value
+    bullet.innerText = `Important Thing: ${input.value},   Priority: ${priorityNumber.value}`
     orderedList.appendChild(bullet); // append element using brackets! 
 
 }
 
 addToListButton.addEventListener("click", addToList);
 
-console.log(importantThings);
+console.log("my array", importantThings);
 
 // 👉 As well as adding the item to the in-memory array, now display each added item in an li element within the ordered list.
 
@@ -36,6 +43,17 @@ console.log(importantThings);
 
 
 // 👉 Add a new label and input field element to your index.html file. This input field represents the priority value of your important thing, and should take in a number. Refactor your code so that, when you click your Add To List button, you add an object to your array, rather than a string value. For example: let importantThings = [{text: 'telephone mother', priority: 1}].
+
+// should take in a number... put restrictions on this? 
+// create an object inside my array.
+    // put keys inside my array when it is declared.
+    // add values to the keys by using dot notation in my function.
+    // will still need to push these to my array.
+    // will be an array of objects {item: , priority: }{item: , priority:}
+    // can change value item by importantThings.item = input.value
+    // make new variable for prioriy box, and priority.value as above.
+    // this will be pushes to the array. 
+
 
 // 👉 Add a new button to your site called Order List. When the button is clicked, reorder your list by priority.
 
