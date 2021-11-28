@@ -8,17 +8,19 @@
     // use .value
 // my function will use push to add to array. 
 
-
-
 importantThings =[];
 
-let inputThing = document.querySelector("#important-thing");
+let input = document.querySelector("#important-thing");
 let addToListButton = document.querySelector("#add-to-list");
 
 function addToList (){
 
-    importantThings.push(inputThing.value)
-    
+    importantThings.push(input.value);
+
+    let orderedList = document.querySelector("ol")
+    let bullet = document.createElement("li");
+    bullet.innerText = input.value
+    orderedList.appendChild(bullet); // append element using brackets! 
 
 }
 
@@ -27,6 +29,11 @@ addToListButton.addEventListener("click", addToList);
 console.log(importantThings);
 
 // 👉 As well as adding the item to the in-memory array, now display each added item in an li element within the ordered list.
+
+//ordered list >> <ol>
+// we want to create new <li> and append to <ol>
+// li.innerText = input.value
+
 
 // 👉 Add a new label and input field element to your index.html file. This input field represents the priority value of your important thing, and should take in a number. Refactor your code so that, when you click your Add To List button, you add an object to your array, rather than a string value. For example: let importantThings = [{text: 'telephone mother', priority: 1}].
 
