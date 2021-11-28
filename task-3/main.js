@@ -10,6 +10,8 @@ async function getCatImage (){
 
 
     let img = document.querySelector("img")
+    img.setAttribute("width", "500px");
+    img.setAttribute("height", "500px");
     img.src = catImage;
     let catHere = document.querySelector("#cat-here")
     catHere.innerText = catImage 
@@ -19,30 +21,8 @@ async function getCatImage (){
    
 }
 
-
-
-
-
-//  let src = document.getElementById("#cat-here");
-//  src.appendChild(img) 
- 
-// src.appendChild(img); 
-
-
-
-getCatImage()
-
-
-
-//let catImage = catImageResult[0].url // gets the image URL from promise
-  //  console.log(catImage);
-    // selects HTML element we want
-    // let img = document.createElement('img');
-    // img.src= `"${catImage}"`
-    // let catHere = document.querySelector('#cat-here')
-    
-    // catHere.appendChild(img)
-    // catHere.innerText = "hello"
+let button = document.querySelector("#click-here");
+button.addEventListener("click", getCatImage);
 
 // 👉 Using fetch, get a random cat image URL using the following 
 //API: https://api.thecatapi.com/v1/images/search
